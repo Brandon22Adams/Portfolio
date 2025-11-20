@@ -1,6 +1,6 @@
 {
   "routes": {
-    "/Portfolio": {},
-    "/Portfolio/about-me": {}
+    "/portfolio": {},
+    "/portfolio/about-me": {}
   }
 }
