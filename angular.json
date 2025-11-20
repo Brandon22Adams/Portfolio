@@ -96,7 +96,7 @@
           "options": {
             "baseHref": "/portfolio/",
             "buildTarget": "portfolio:build:production",
-            "dir": "dist/portfolio"
+            "dir": "dist/portfolio/browser"
           }
         }
       }
