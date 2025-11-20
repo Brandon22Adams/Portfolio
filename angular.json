@@ -31,7 +31,7 @@
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
-            "outputPath": "dist/portfolio",
+            "outputPath": "dist/Portfolio",
             "ssr": {
               "entry": "src/server.ts"
             }
@@ -92,7 +92,10 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/Portfolio/"
+          }
         }
       }
     }
