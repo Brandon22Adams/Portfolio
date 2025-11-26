@@ -8,16 +8,15 @@
       <button matButton="outlined" (click)="navigateTo(routeEnum.contact)" class="ml-2">Contact me</button>
     </div>
 
-    <div class="flex flex-row">
+    <div class="flex" [class]="isMobile ? 'flex-col w-full' : 'flex-row'">
       @for(project of featuredProjects; track project.title) {
-      <mat-card class="w-1/2 mr-2">
+      <mat-card [class]="isMobile ? 'm-4' : 'w-1/2 mr-2'">
         <mat-card-header>
           <mat-icon mat-card-avatar>{{project.icon}}</mat-icon>
           <mat-card-title>{{project.title}}</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <img [src]="project.imgSrc" [alt]="project.imgAlt"
-            [class]="isMobile ? 'w-[145px] h-[97px]' : 'w-[480px] h-[320px]'">
+          <img [src]="project.imgSrc" [alt]="project.imgAlt" [class]="isMobile ? '' : 'w-[480px] h-[320px]'">
           <p class="mt-4">{{project.description}}</p>
         </mat-card-content>
         <mat-card-actions>

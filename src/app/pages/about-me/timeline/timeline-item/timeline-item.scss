@@ -1,0 +1,9 @@
+.triangle {
+  background-color: #1c1b2281 !important;
+  background: linear-gradient(
+    to top,
+    #1c1b2234 50%,
+    transparent 50%
+  );
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}

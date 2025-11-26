@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { Mobile } from '../services/mobile';
 
 @Component({
   selector: 'app-carousel',
@@ -10,8 +11,11 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './carousel.scss',
 })
 export class Carousel {
+  public isMobile: boolean = false;
 
-  constructor() {}
+  constructor(mobileService: Mobile) {
+    this.isMobile = mobileService.isMobileDevice();
+  }
 
   @Input() public set images(images: Array<string>) {
     this.allImages = images;
@@ -20,6 +24,10 @@ export class Carousel {
   public allImages: Array<string> = [];
   public currentIndex = 0;
   public listLength = 999;
+
+  public getAtIndex(index: number) {
+    this.currentIndex = index;
+  }
 
   public getPrev() {
     this.currentIndex = this.currentIndex === 0 ? 0 : this.currentIndex - 1;

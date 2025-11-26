@@ -1,46 +1,90 @@
-<div>
-  <mat-card class="flex flex-row mt-4">
+<div class="flex mt-4 p-4" [class]="isMobile ? 'flex-col' : 'flex-row'">
+  <mat-card class="p-4 mr-8" [class]="isMobile ? 'mb-4 w-full' : 'h-[130px]'">
     <p>I’m a developer who loves building both web apps and games. By day, I create dynamic web experiences using modern
       tech stacks. By night, I build games and mods, experimenting with gameplay and design. I enjoy solving problems,
       learning new tools, and bringing creative ideas to life.
     </p>
+  </mat-card>
 
-    <div class="flex flex-row justify-center">
+  <mat-card class="flex flex-row justify-center p-4">
+    <div>
+      <p class="text-sm border-b-[1px] mb-1 border-purple-300 inline-block">Web Stack</p>
       <div class="flex flex-col">
-        <span class="badge my-1 mx-2">
-          <mat-icon svgIcon="unity"></mat-icon>
-          <p>Unity</p>
+        <span class="badge my-1">
+          <mat-icon svgIcon="angular"></mat-icon>
+          <p>Angular</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="typescript"></mat-icon>
+          <p>Typescript</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="rxjs"></mat-icon>
+          <p>RXJS</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="express"></mat-icon>
+          <p>Express.js</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="mongodb"></mat-icon>
+          <p>MongoDB</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="azure"></mat-icon>
+          <p>Azure</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="oauth"></mat-icon>
+          <p>OAuth</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="jest"></mat-icon>
+          <p>Jest</p>
         </span>
       </div>
-      <mat-divider vertical></mat-divider>
-      <div>
-        <span class="badge my-1 mx-2">
+    </div>
+
+    <mat-divider vertical class="mx-4"></mat-divider>
+
+    <div>
+      <p class="text-sm border-b-[1px] mb-1 border-purple-300 inline-block">Game Stack</p>
+      <div class="flex flex-col">
+        <span class="badge my-1">
           <mat-icon svgIcon="unity"></mat-icon>
           <p>Unity</p>
         </span>
-        <span class="badge my-1 mx-2">
-          <mat-icon svgIcon="unity"></mat-icon>
-          <p>Unity</p>
+        <span class="badge my-1">
+          <mat-icon svgIcon="godot"></mat-icon>
+          <p>Godot</p>
         </span>
-        <span class="badge my-1 mx-2">
-          <mat-icon svgIcon="unity"></mat-icon>
-          <p>Unity</p>
+        <span class="badge my-1">
+          <mat-icon svgIcon="csharp"></mat-icon>
+          <p>C#</p>
         </span>
-        <span class="badge my-1 mx-2">
-          <mat-icon svgIcon="unity"></mat-icon>
-          <p>Unity</p>
+        <span class="badge my-1">
+          <mat-icon svgIcon="gimp"></mat-icon>
+          <p>GIMP</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon>grid_view</mat-icon>
+          <p>Design</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon>sports_esports</mat-icon>
+          <p>Jams</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon svgIcon="git"></mat-icon>
+          <p>Git</p>
+        </span>
+        <span class="badge my-1">
+          <mat-icon>lightbulb</mat-icon>
+          <p>Prototyping</p>
         </span>
       </div>
     </div>
   </mat-card>
-
-  <div>
-    Experience / Achievements:
-    Key work experience, notable projects, game jams
-  </div>
-
-  <div>
-    Fun Personal Touch:
-    Could include hobbies, games you like, or small personality snippet
-  </div>
 </div>
+<app-timeline></app-timeline>
+<div class="mb-8"></div>

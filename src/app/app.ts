@@ -9,14 +9,19 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 const ICONS_CONST = [
   'angular',
-  'cSharp',
+  'csharp',
   'gimp',
-  'typeScript',
+  'typescript',
   'unity',
   'stripe',
   'express',
-  'mongoDB',
+  'mongodb',
   'oauth',
+  'rxjs',
+  'azure',
+  'jest',
+  'godot',
+  'git',
 ];
 
 @Component({

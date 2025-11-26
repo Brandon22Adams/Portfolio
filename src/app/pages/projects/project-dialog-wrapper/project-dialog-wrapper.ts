@@ -8,6 +8,7 @@ import { BreakOut } from '../break-out/break-out';
 import { Froge } from '../froge/froge';
 import { GlitchWar } from '../glitch-war/glitch-war';
 import { ToolPouch } from '../tool-pouch/tool-pouch';
+import { Mobile } from '../../../services/mobile';
 
 @Component({
   selector: 'app-project-dialog-wrapper',
@@ -20,8 +21,11 @@ export class ProjectDialogWrapper {
   private readonly data = inject<{id: ProjectID}>(MAT_DIALOG_DATA);
   public readonly projectIDs = ProjectID;
   public readonly currentProject = PROJECTS_CONST.find((project) => project.id === this.data.id);
+  public isMobile: boolean = false;
 
-  constructor() {}
+  constructor(mobileService: Mobile) {
+    this.isMobile = mobileService.isMobileDevice();
+  }
 
   public close(): void {
     this.dialogRef.close();

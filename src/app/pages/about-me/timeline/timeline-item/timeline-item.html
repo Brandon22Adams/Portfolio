@@ -1,0 +1,24 @@
+@if(item) {
+@if(isMobile) {
+<div class="block mx-2 mb-4">
+  <div class="triangle text-white relative text-center w-[90%] mx-auto h-[40px] pt-[20px]">
+    {{item.date}}
+  </div>
+  <mat-card class="p-2 block bg-background/65">
+    <p><span class="text-primary mr-2">{{item.title}}</span>{{item.description}}</p>
+  </mat-card>
+</div>
+} @else {
+<div class="inline-block relative -top-[30px] mx-2 mb-4" [class]="isFirstItem ? 'w-[60%]' : 'w-[30%]'">
+  <div class="flex justify-center">
+    <div class="bg-primary w-4 h-4 rounded-full"></div>
+  </div>
+  <div class="triangle text-white relative text-center w-[90%] mx-auto h-[40px] pt-[20px]">
+    {{item.date}}
+  </div>
+  <mat-card class="p-2 block bg-background/65">
+    <p><span class="text-primary mr-2">{{item.title}}</span>{{item.description}}</p>
+  </mat-card>
+</div>
+}
+}

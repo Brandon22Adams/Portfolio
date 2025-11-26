@@ -6,8 +6,7 @@
       <mat-card-title>{{project.title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <img [src]="project.imgSrc" [alt]="project.imgAlt"
-        [class]="isMobile ? 'w-[145px] h-[97px]' : 'w-[480px] h-[320px]'">
+      <img [src]="project.imgSrc" [alt]="project.imgAlt" [class]="isMobile ? '' : 'w-[480px] h-[320px]'">
       <p class="mt-4">{{project.description}}</p>
     </mat-card-content>
     <mat-card-actions>
