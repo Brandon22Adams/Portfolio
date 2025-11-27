@@ -22,6 +22,8 @@ const ICONS_CONST = [
   'jest',
   'godot',
   'git',
+  'itchio',
+  'linkedin',
 ];
 
 @Component({
