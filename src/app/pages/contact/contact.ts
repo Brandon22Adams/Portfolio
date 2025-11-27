@@ -31,18 +31,17 @@ export class Contact {
       case 'itchio':
         window.open('https://codewordz.itch.io/', '_blank')?.focus()
         break;
-        case 'email':
+      case 'email':
           navigator.clipboard.writeText('brandon22adams@gmail.com')
           this.snackbar.open('Copied email to clipboard', 'Close')
           window.location.href = `mailto:brandon22adams@gmail.com`
+        break;
+      case 'download':
+          window.open('/Brandon_Adams_Resume.pdf', '_blank')?.focus();
         break;
 
       default:
         break;
     }
-  }
-
-  public downloadResume() {
-    window.open('/Brandon_Adams_Resume.pdf', '_blank')?.focus();
   }
 }

@@ -6,6 +6,8 @@ import { Mobile } from './services/mobile';
 import { NavBarService } from './nav-bar/nav-bar-service';
 import { MatrixBackground } from "./matrix-background/matrix-background";
 import { DomSanitizer } from '@angular/platform-browser';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID, Inject } from '@angular/core';
 
 const ICONS_CONST = [
   'angular',
@@ -35,20 +37,22 @@ const ICONS_CONST = [
 export class App {
   public isMobile: boolean = false;
 
-  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private mobileService: Mobile, private navBarService: NavBarService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private mobileService: Mobile, private navBarService: NavBarService) {
     matIconRegistry.setDefaultFontSetClass('material-symbols-outlined');
+    this.registerIcons();
   }
 
   public ngOnInit(): void {
     this.isMobile = this.mobileService.isMobileDevice();
     this.navBarService.initiateCurrentRoute();
-    this.registerIcons();
   }
 
   public registerIcons(): void {
-    ICONS_CONST.forEach((icon) => {
-      this.matIconRegistry.addSvgIcon(icon, this.domSanitizer.bypassSecurityTrustResourceUrl(`icons/${icon}.svg`));
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      ICONS_CONST.forEach((icon) => {
+        this.matIconRegistry.addSvgIcon(icon, this.domSanitizer.bypassSecurityTrustResourceUrl(`icons/${icon}.svg`));
+      });
+    }
   }
 
 }

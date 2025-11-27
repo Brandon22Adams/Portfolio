@@ -30,7 +30,7 @@
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",
-            "outputMode": "server",
+            "outputMode": "static",
             "outputPath": "dist/Portfolio",
             "ssr": {
               "entry": "src/server.ts"
